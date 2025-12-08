@@ -1,0 +1,10 @@
+name: wandmagic
+version: '${project.version}'
+main: magicwand.wandmagic
+api-version: '1.16'
+commands:
+  givewand:
+    description: Выдать магический посох
+    usage: /givewand
+    permission: magicwand.give
+    permission-message: У вас нет прав на магию!
