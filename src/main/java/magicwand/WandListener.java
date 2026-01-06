@@ -3,6 +3,7 @@ package magicwand;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.Sound;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -48,6 +49,14 @@ public class WandListener implements Listener {
 
             player.sendMessage(ChatColor.AQUA + "Бабах!");
 
+            player.spawnParticle(
+                    org.bukkit.Particle.SMOKE_NORMAL,
+                    player.getLocation().add(0, 2, 0), // Где спавнить
+                    10,  // Количество частиц
+                    0.3, 0.3, 0.3, // Разброс
+                    0.05 // Скорость движения частиц
+            );
+
             cooldowns.put(player.getUniqueId(), System.currentTimeMillis() + COOLDOWN_TIME);
         } else {
             player.sendMessage(ChatColor.RED + "Слишком далеко!");
@@ -61,6 +70,7 @@ public class WandListener implements Listener {
             long current = System.currentTimeMillis();
             if (current < endsAt) {
                 long left = (endsAt - current) / 1000;
+                player.playSound(player.getLocation(), Sound.ENTITY_VILLAGER_NO, 1.0f, 1.0f);
                 player.sendMessage(ChatColor.RED + "Кулдаун: " + (left + 1) + " сек.");
                 return true;
             }

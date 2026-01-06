@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/wandmagic.iml" filepath="$PROJECT_DIR$/wandmagic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/wandmagic.iml" filepath="$PROJECT_DIR$/.idea/wandmagic.iml" />
     </modules>
   </component>
 </project>

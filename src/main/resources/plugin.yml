@@ -1,6 +1,6 @@
 name: wandmagic
 version: '${project.version}'
-main: magicwand.wandmagic
+main: magicwand.WandMagic
 api-version: '1.16'
 commands:
   givewand:
